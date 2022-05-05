@@ -14,7 +14,9 @@ const Home = ({ bannerData, products }) => {
       </section>
 
       <section className="products-container">
-        {/* {products?.map((product) => product)} */}
+        {products?.map((product) => (
+          <Product item={product} key={product._id} />
+        ))}
       </section>
 
       <FooterBanner></FooterBanner>
