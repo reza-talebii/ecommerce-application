@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import Link from "next/link";
 import {
   AiOutlineMinus,
   AiOutlinePlus,
@@ -7,6 +6,7 @@ import {
   AiOutlineShopping,
 } from "react-icons/ai";
 import { TiDeleteOutline } from "react-icons/ti";
+
 import toast from "react-hot-toast";
 
 import { useProductContext } from "../context/product/ProductContext";

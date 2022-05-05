@@ -59,7 +59,9 @@ export const ProductProvider = ({ children }) => {
       ]);
       setTotalPrice((prevTotalPrice) => prevTotalPrice + foundProduct.price);
       setTotalQuantities((prevTotalQuantities) => prevTotalQuantities + 1);
-    } else if (value === "dec") {
+    }
+
+    if (value === "dec") {
       if (foundProduct.quantity > 1) {
         setCartItems([
           ...newCartItems,
