@@ -8,9 +8,12 @@ import {
 
 import { client, urlFor } from "../../lib/client";
 import { Product } from "../../components";
+import { useProductContext } from "../../context/product/ProductContext";
 
 const ProductDetails = ({ product, products }) => {
   const { image, name, details, price } = product;
+  const { decrementQty, incrementQty, qty } = useProductContext();
+
   const [index, setIndex] = useState(0);
 
   const handleBuyNow = () => {};
@@ -54,11 +57,11 @@ const ProductDetails = ({ product, products }) => {
           <div className="quantity">
             <h3>Quantity:</h3>
             <p className="quantity-desc">
-              <span className="minus" onClick={""}>
+              <span className="minus" onClick={decrementQty}>
                 <AiOutlineMinus />
               </span>
-              <span className="num">{10}</span>
-              <span className="plus" onClick={""}>
+              <span className="num">{qty}</span>
+              <span className="plus" onClick={incrementQty}>
                 <AiOutlinePlus />
               </span>
             </p>
