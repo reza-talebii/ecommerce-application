@@ -1,6 +1,8 @@
 import Stripe from "stripe";
 
-const stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY);
+const stripe = new Stripe(
+  "sk_test_51Kw1hHAzgLmMGD7o9Apo8cgH6fv9RHHKEIxTpAYfEYX6OiXBiiLSNBQo1WxnJBIzn4K9cIjj2mxiKMn0hcDkNRIG00dqreov7D"
+);
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
@@ -10,7 +12,7 @@ export default async function handler(req, res) {
         mode: "payment",
         payment_method_types: ["card"],
         billing_address_collection: "auto",
-        shipping_options: [{ shipping_rate: "shr_1Kw1mJAzgLmMGD7oS7QpnYyc" }],
+        shipping_options: [{ shipping_rate: "shr_1Kw2LrAzgLmMGD7ooxOu85ZY" }],
         line_items: req.body.map((item) => {
           const img = item.image[0].asset._ref;
           const newImage = img

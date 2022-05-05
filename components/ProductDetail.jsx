@@ -13,14 +13,12 @@ import { useProductContext } from "../context/product/ProductContext";
 
 const ProductDetail = ({ product }) => {
   const { image, name, details, price } = product;
-  const { decrementQty, incrementQty, qty, onAdd, cartItems } =
+  const { decrementQty, incrementQty, qty, onAdd, cartItems, setShowCart } =
     useProductContext();
 
   const [index, setIndex] = useState(0);
 
-  const handleBuyNow = () => {};
-
-  console.log(cartItems);
+  const handleBuyNow = () => setShowCart(true);
 
   return (
     <section className="product-detail-container">
