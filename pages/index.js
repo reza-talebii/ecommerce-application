@@ -6,7 +6,7 @@ import { Product, FooterBanner, HeroBanner } from "../components";
 const Home = ({ bannerData, products }) => {
   return (
     <>
-      <HeroBanner banner={""} />
+      <HeroBanner banner={bannerData} />
 
       <section className="products-heading">
         <h2>Beset Selling Products</h2>

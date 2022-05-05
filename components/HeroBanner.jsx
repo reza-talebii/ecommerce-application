@@ -2,24 +2,33 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const HeroBanner = () => {
+import { urlFor } from "../lib/client";
+
+const HeroBanner = ({ banner }) => {
+  const { midText, smallText, buttonText, desc, largeText1, image } = banner[0];
+
   return (
     <section className="hero-banner-container">
       <div>
-        <p className="beats-solo">SMALL TEXT</p>
-        <h3>MID TEXT</h3>
-        {/* <Image src="d" alt="headphones" className="hero-banner-image" /> */}
+        <p className="beats-solo">{smallText}</p>
+        <h3>{midText}</h3>
+        <h1>{largeText1}</h1>
+        <img
+          src={urlFor(image)}
+          alt="headphones"
+          className="hero-banner-image"
+        />
 
         <div>
           <Link href={`/products/ID`} passHref>
             <a>
-              <button type="button">BUTTON TEXT</button>
+              <button type="button">{buttonText}</button>
             </a>
           </Link>
 
           <div className="desc">
             <h5>Description</h5>
-            <p>Description</p>
+            <p>{desc}</p>
           </div>
         </div>
       </div>
