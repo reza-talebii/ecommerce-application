@@ -18,7 +18,10 @@ const ProductDetail = ({ product }) => {
 
   const [index, setIndex] = useState(0);
 
-  const handleBuyNow = () => setShowCart(true);
+  const handleBuyNow = () => {
+    onAdd(product, qty);
+    setShowCart(true);
+  };
 
   return (
     <section className="product-detail-container">
