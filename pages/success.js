@@ -3,19 +3,19 @@ import Link from "next/link";
 import { BsBagCheckFill } from "react-icons/bs";
 
 import { useProductContext } from "../context/product/ProductContext";
-// import { runFireworks } from '../lib/utils';
+import { runFireworks } from "../lib/utils";
 
 const Success = () => {
   const { setCartItems, setTotalPrice, setTotalQuantities } =
     useProductContext();
 
-  //   useEffect(() => {
-  //     localStorage.clear();
-  //     setCartItems([]);
-  //     setTotalPrice(0);
-  //     setTotalQuantities(0);
-  //     runFireworks();
-  //   }, []);
+  useEffect(() => {
+    localStorage.clear();
+    setCartItems([]);
+    setTotalPrice(0);
+    setTotalQuantities(0);
+    runFireworks();
+  }, []);
 
   return (
     <div className="success-wrapper">
@@ -27,14 +27,16 @@ const Success = () => {
         <p className="email-msg">Check your email inbox for the receipt.</p>
         <p className="description">
           If you have any questions, please email
-          <a className="email" href="mailto:order@example.com">
-            order@example.com
+          <a className="email" href="reza.talebi0902@gmail.com">
+            reza.talebi0902@gmail
           </a>
         </p>
-        <Link href="/">
-          <button type="button" width="300px" className="btn">
-            Continue Shopping
-          </button>
+        <Link href="/" passHref>
+          <a>
+            <button type="button" width="300px" className="btn">
+              Continue Shopping
+            </button>
+          </a>
         </Link>
       </div>
     </div>

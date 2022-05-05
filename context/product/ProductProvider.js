@@ -99,6 +99,9 @@ export const ProductProvider = ({ children }) => {
     totalQuantities,
     toggleCartItemQuanitity,
     onRemove,
+    setCartItems,
+    setTotalPrice,
+    setTotalQuantities,
   };
   return (
     <ProductContext.Provider value={values}>{children}</ProductContext.Provider>
