@@ -16,14 +16,11 @@ const ProductDetails = ({ product, products }) => {
   const handleBuyNow = () => {};
 
   return (
-    <div>
+    <section>
       <div className="product-detail-container">
         <div>
           <div className="image-container">
-            <img
-              src={urlFor(image && image[index])}
-              className="product-detail-image"
-            />
+            <img src={urlFor(image[index])} className="product-detail-image" />
           </div>
           <div className="small-images-container">
             {image?.map((item, i) => (
@@ -33,7 +30,7 @@ const ProductDetails = ({ product, products }) => {
                 className={
                   i === index ? "small-image selected-image" : "small-image"
                 }
-                onMouseEnter={() => setIndex(i)}
+                onClick={() => setIndex(i)}
               />
             ))}
           </div>
@@ -60,7 +57,7 @@ const ProductDetails = ({ product, products }) => {
               <span className="minus" onClick={""}>
                 <AiOutlineMinus />
               </span>
-              <span className="num">{qty}</span>
+              <span className="num">{}</span>
               <span className="plus" onClick={""}>
                 <AiOutlinePlus />
               </span>
@@ -81,13 +78,13 @@ const ProductDetails = ({ product, products }) => {
         <h2>You may also like</h2>
         <div className="marquee">
           <div className="maylike-products-container track">
-            {products.map((item) => (
-              <Product key={item._id} product={item} />
+            {products.map((product) => (
+              <Product key={product._id} item={product} />
             ))}
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
@@ -100,7 +97,7 @@ export const getStaticPaths = async () => {
 
   const products = await client.fetch(query);
 
-  const paths = Product.map((product) => ({
+  const paths = products.map((product) => ({
     params: {
       slug: product.slug.current,
     },
@@ -112,7 +109,7 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getServerSideProps = async ({ prams: { slug } }) => {
+export const getStaticProps = async ({ params: { slug } }) => {
   const query = `*[_type == "product" && slug.current== '${slug}'][0]`;
   const productQuery = `*[_type == "product"]`;
 
