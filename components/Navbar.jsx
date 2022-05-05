@@ -3,6 +3,7 @@ import React from "react";
 import Link from "next/link";
 
 import { AiOutlineShopping } from "react-icons/ai";
+import { AiFillHome } from "react-icons/all";
 
 import { useProductContext } from "../context/product/ProductContext";
 
@@ -15,7 +16,9 @@ const Navbar = () => {
     <nav className="navbar-container">
       <p className="logo">
         <Link href={"/"} passHref>
-          <a>Headphones</a>
+          <a>
+            <AiFillHome style={{ fontSize: 26 }} />
+          </a>
         </Link>
       </p>
 

@@ -13,7 +13,7 @@ import { useProductContext } from "../context/product/ProductContext";
 
 const ProductDetail = ({ product }) => {
   const { image, name, details, price } = product;
-  const { decrementQty, incrementQty, qty, onAdd, cartItems, setShowCart } =
+  const { decrementQty, incrementQty, qty, onAdd, setShowCart } =
     useProductContext();
 
   const [index, setIndex] = useState(0);

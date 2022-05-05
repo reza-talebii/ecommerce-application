@@ -20,7 +20,7 @@ const HeroBanner = ({ banner }) => {
         />
 
         <div>
-          <Link href={`/products/ID`} passHref>
+          <Link href={`/`} passHref>
             <a>
               <button type="button">{buttonText}</button>
             </a>
