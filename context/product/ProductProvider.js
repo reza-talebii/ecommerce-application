@@ -6,7 +6,7 @@ import { ProductContext } from "./ProductContext";
 export const ProductProvider = ({ children }) => {
   const [showCart, setShowCart] = useState(false);
   const [cartItems, setCartItems] = useState([]);
-  const [totalQuantities, setTotalQuantities] = useState([]);
+  const [totalQuantities, setTotalQuantities] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
   const [qty, setQty] = useState(1);
 
@@ -42,12 +42,14 @@ export const ProductProvider = ({ children }) => {
 
   const values = {
     showCart,
+    setShowCart,
     cartItems,
     totalPrice,
     qty,
     incrementQty,
     decrementQty,
     onAdd,
+    totalQuantities,
   };
   return (
     <ProductContext.Provider value={values}>{children}</ProductContext.Provider>
