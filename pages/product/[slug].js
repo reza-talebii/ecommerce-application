@@ -1,22 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { client } from "../../lib/client";
-import { Product, ProductDetail } from "../../components";
+import { ProductDetail, ProductSlider } from "../../components";
 
 const ProductDetails = ({ product, products }) => {
   return (
     <section>
       <ProductDetail product={product} />
-      <div className="maylike-products-wrapper">
-        <h2>You may also like</h2>
-        <div className="marquee">
-          <div className="maylike-products-container track">
-            {products.map((product) => (
-              <Product key={product._id} item={product} />
-            ))}
-          </div>
-        </div>
-      </div>
+      <ProductSlider products={products} />
     </section>
   );
 };
