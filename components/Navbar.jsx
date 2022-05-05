@@ -3,7 +3,7 @@ import React from "react";
 import Link from "next/link";
 
 import { AiOutlineShopping } from "react-icons/ai";
-import { AiFillHome } from "react-icons/all";
+import { AiFillHome } from "react-icons/ai";
 
 import { useProductContext } from "../context/product/ProductContext";
 
