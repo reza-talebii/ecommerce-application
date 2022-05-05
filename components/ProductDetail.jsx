@@ -13,14 +13,17 @@ import { useProductContext } from "../context/product/ProductContext";
 
 const ProductDetail = ({ product }) => {
   const { image, name, details, price } = product;
-  const { decrementQty, incrementQty, qty } = useProductContext();
+  const { decrementQty, incrementQty, qty, onAdd, cartItems } =
+    useProductContext();
 
   const [index, setIndex] = useState(0);
 
   const handleBuyNow = () => {};
 
+  console.log(cartItems);
+
   return (
-    <div className="product-detail-container">
+    <section className="product-detail-container">
       <div>
         <div className="image-container">
           <img src={urlFor(image[index])} className="product-detail-image" />
@@ -67,7 +70,11 @@ const ProductDetail = ({ product }) => {
           </p>
         </div>
         <div className="buttons">
-          <button type="button" className="add-to-cart">
+          <button
+            type="button"
+            className="add-to-cart"
+            onClick={() => onAdd(product, qty)}
+          >
             Add to Cart
           </button>
           <button type="button" className="buy-now" onClick={handleBuyNow}>
@@ -75,7 +82,7 @@ const ProductDetail = ({ product }) => {
           </button>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
