@@ -1,10 +1,8 @@
 ## وب 3
 **یک پروژه فول استک و ریسپانسیو تجارت الکترونیکی با قابلیت پرداخت با Stripe 
 
+> دمو سایت [_اینجا_](https://ecommerce-application-nine.vercel.app/).
 
-> دمو سایت [_اینجا_](https://smart-contract-web3.netlify.app/).
-
-## اسکرین شات
 
 ![اسکرین شات](https://i.ibb.co/DVF4tNW/image.png)
 
@@ -27,3 +25,8 @@
 
 ## وضعیت پروژه
 در حال توسعه
+
+
+## اسکرین شات
+
+![اسکرین شات](https://i.ibb.co/DVF4tNW/image.png)
