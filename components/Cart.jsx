@@ -14,8 +14,14 @@ import { urlFor } from "../lib/client";
 
 const Cart = () => {
   const cartRef = useRef();
-  const { totalPrice, totalQuantities, cartItems, setShowCart } =
-    useProductContext();
+  const {
+    totalPrice,
+    totalQuantities,
+    cartItems,
+    setShowCart,
+    toggleCartItemQuanitity,
+    onRemove,
+  } = useProductContext();
 
   const handleCheckout = async () => {};
 
