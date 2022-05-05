@@ -1,7 +1,7 @@
 import React from "react";
 
-import { client } from "../lib/client";
 import { Product, FooterBanner, HeroBanner } from "../components";
+import { client } from "../lib/client";
 
 const Home = ({ bannerData, products }) => {
   return (
@@ -19,7 +19,7 @@ const Home = ({ bannerData, products }) => {
         ))}
       </section>
 
-      <FooterBanner></FooterBanner>
+      <FooterBanner banner={bannerData}></FooterBanner>
     </>
   );
 };
