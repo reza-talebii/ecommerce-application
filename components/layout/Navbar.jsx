@@ -5,9 +5,9 @@ import Link from "next/link";
 import { AiOutlineShopping } from "react-icons/ai";
 import { AiFillHome } from "react-icons/ai";
 
-import { useProductContext } from "../context/product/ProductContext";
+import { useProductContext } from "../../context/product/ProductContext";
 
-import { Cart } from "./";
+import { Cart } from "..";
 
 const Navbar = () => {
   const { showCart, setShowCart, totalQuantities } = useProductContext();

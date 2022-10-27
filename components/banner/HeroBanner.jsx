@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import { urlFor } from "../lib/client";
+import { urlFor } from "../../lib/client";
 
 const HeroBanner = ({ banner }) => {
   const { midText, smallText, buttonText, desc, largeText1, image } = banner[0];

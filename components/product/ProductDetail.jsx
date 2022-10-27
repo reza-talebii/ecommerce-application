@@ -7,9 +7,9 @@ import {
   AiOutlineStar,
 } from "react-icons/ai";
 
-import { urlFor } from "../lib/client";
+import { urlFor } from "../../lib/client";
 
-import { useProductContext } from "../context/product/ProductContext";
+import { useProductContext } from "../../context/product/ProductContext";
 
 const ProductDetail = ({ product }) => {
   const { image, name, details, price } = product;
@@ -27,7 +27,11 @@ const ProductDetail = ({ product }) => {
     <section className="product-detail-container">
       <div>
         <div className="image-container">
-          <img src={urlFor(image[index])} className="product-detail-image" />
+          <img
+            src={urlFor(image[index])}
+            className="product-detail-image"
+            alt=""
+          />
         </div>
         <div className="small-images-container">
           {image?.map((item, i) => (

@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-import { urlFor } from "../lib/client";
+import { urlFor } from "../../lib/client";
 
 const Product = ({ item }) => {
   const { image, name, slug, price } = item;
